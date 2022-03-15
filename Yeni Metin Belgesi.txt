@@ -1,0 +1,171 @@
+028421112803
+
+
+(döngü halinde sonda duvara çarpıyor)
+myVariable = 0
+
+def when_started1():
+    global myVariable
+    drivetrain.set_drive_velocity(250, PERCENT)
+    drivetrain.set_turn_velocity(150, PERCENT)
+    for repeat_count in range(3):
+        drivetrain.drive_for(FORWARD, 750, MM)
+        magnet.energize(BOOST)
+        drivetrain.turn_for(RIGHT, 180, DEGREES)
+        drivetrain.drive_for(FORWARD, 750, MM)
+        magnet.energize(DROP)
+        drivetrain.turn_for(RIGHT, 180, DEGREES)
+        drivetrain.drive_for(FORWARD, 1150, MM)
+        magnet.energize(BOOST)
+        drivetrain.turn_for(RIGHT, 180, DEGREES)
+        drivetrain.drive_for(FORWARD, 1150, MM)
+        magnet.energize(DROP)
+        drivetrain.turn_for(RIGHT, 180, DEGREES)
+        drivetrain.drive_for(FORWARD, 1550, MM)
+        magnet.energize(BOOST)
+        drivetrain.turn_for(RIGHT, 180, DEGREES)
+        drivetrain.drive_for(FORWARD, 1550, MM)
+        magnet.energize(DROP)
+        drivetrain.turn_for(LEFT, 90, DEGREES)
+        drivetrain.drive_for(FORWARD, 775, MM)
+        drivetrain.turn_for(LEFT, 90, DEGREES)
+        wait(5, MSEC)
+
+vr_thread(when_started1)
+
+
+
+
+(Döngüsüz sonda duvara çarpmıyor)
+
+myVariable = 0
+
+def when_started1():
+    global myVariable
+    drivetrain.set_drive_velocity(250, PERCENT)
+    drivetrain.set_turn_velocity(150, PERCENT)
+    drivetrain.drive_for(FORWARD, 750, MM)
+    magnet.energize(BOOST)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    drivetrain.drive_for(FORWARD, 750, MM)
+    magnet.energize(DROP)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    drivetrain.drive_for(FORWARD, 1150, MM)
+    magnet.energize(BOOST)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    drivetrain.drive_for(FORWARD, 1150, MM)
+    magnet.energize(DROP)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    drivetrain.drive_for(FORWARD, 1550, MM)
+    magnet.energize(BOOST)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    drivetrain.drive_for(FORWARD, 1550, MM)
+    magnet.energize(DROP)
+    drivetrain.turn_for(LEFT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 775, MM)
+    drivetrain.turn_for(LEFT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 750, MM)
+    magnet.energize(BOOST)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    drivetrain.drive_for(FORWARD, 750, MM)
+    magnet.energize(DROP)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    drivetrain.drive_for(FORWARD, 1150, MM)
+    magnet.energize(BOOST)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    drivetrain.drive_for(FORWARD, 1150, MM)
+    magnet.energize(DROP)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    drivetrain.drive_for(FORWARD, 1550, MM)
+    magnet.energize(BOOST)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    drivetrain.drive_for(FORWARD, 1550, MM)
+    magnet.energize(DROP)
+    drivetrain.turn_for(LEFT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 775, MM)
+    drivetrain.turn_for(LEFT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 750, MM)
+    magnet.energize(BOOST)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    drivetrain.drive_for(FORWARD, 750, MM)
+    magnet.energize(DROP)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    drivetrain.drive_for(FORWARD, 1150, MM)
+    magnet.energize(BOOST)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    drivetrain.drive_for(FORWARD, 1150, MM)
+    magnet.energize(DROP)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    drivetrain.drive_for(FORWARD, 1550, MM)
+    magnet.energize(BOOST)
+    drivetrain.turn_for(RIGHT, 180, DEGREES)
+    drivetrain.drive_for(FORWARD, 1550, MM)
+    magnet.energize(DROP)
+    drivetrain.drive_for(REVERSE, 400, MM)
+    drivetrain.turn_for(LEFT, 180, DEGREES)
+
+vr_thread(when_started1)
+
+
+(Renk sensörleri ile döngü kullanılarak yapılmış son kod)
+
+myVariable = 0
+
+def when_started1():
+    global myVariable
+    drivetrain.set_drive_velocity(100, PERCENT)
+    drivetrain.set_turn_velocity(150, PERCENT)
+    for repeat_count in range(3):
+        drivetrain.drive(FORWARD)
+        while not down_eye.detect(NONE):
+            wait(5, MSEC)
+        while not down_eye.detect(BLUE):
+            wait(5, MSEC)
+        magnet.energize(BOOST)
+        drivetrain.turn_for(RIGHT, 180, DEGREES)
+        drivetrain.drive(FORWARD)
+        while not front_eye.near_object():
+            wait(5, MSEC)
+        magnet.energize(DROP)
+        drivetrain.turn_for(RIGHT, 180, DEGREES)
+        wait(5, MSEC)
+    drivetrain.drive_for(FORWARD, 200, MM)
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 775, MM)
+    drivetrain.turn_for(LEFT, 90, DEGREES)
+    for repeat_count2 in range(3):
+        drivetrain.drive(FORWARD)
+        while not down_eye.detect(NONE):
+            wait(5, MSEC)
+        while not down_eye.detect(RED):
+            wait(5, MSEC)
+        magnet.energize(BOOST)
+        drivetrain.turn_for(RIGHT, 180, DEGREES)
+        drivetrain.drive(FORWARD)
+        while not front_eye.near_object():
+            wait(5, MSEC)
+        magnet.energize(DROP)
+        drivetrain.turn_for(RIGHT, 180, DEGREES)
+        wait(5, MSEC)
+    drivetrain.drive_for(FORWARD, 200, MM)
+    drivetrain.turn_for(RIGHT, 90, DEGREES)
+    drivetrain.drive_for(FORWARD, 775, MM)
+    drivetrain.turn_for(LEFT, 90, DEGREES)
+    for repeat_count3 in range(3):
+        drivetrain.drive(FORWARD)
+        while not down_eye.detect(NONE):
+            wait(5, MSEC)
+        while not down_eye.detect(GREEN):
+            wait(5, MSEC)
+        magnet.energize(BOOST)
+        drivetrain.turn_for(RIGHT, 180, DEGREES)
+        drivetrain.drive(FORWARD)
+        while not front_eye.near_object():
+            wait(5, MSEC)
+        magnet.energize(DROP)
+        drivetrain.turn_for(RIGHT, 180, DEGREES)
+        wait(5, MSEC)
+    drivetrain.drive_for(FORWARD, 350, MM)
+
+vr_thread(when_started1)
+
